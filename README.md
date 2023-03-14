@@ -55,8 +55,7 @@ You can now manipulate the data further as needed. Data visualization, statistic
 
 # Contact
 If you have any questions or feedback about this project, please feel free to reach out to me.
-- Email: mellodramat@gmail.com
-- GitHub: https://github.com/Dramatycznie
+- GitHub: https://github.com/EpicStuff
 
 # Bug reports and feature requests
-For bug reports and feature requests, please open an issue on my GitHub repository: https://github.com/Dramatycznie/AO3_Scraper/issues
+For bug reports and feature requests, please open an issue on my GitHub repository: https://github.com/EpicStuff/AO3_Scraper/issues

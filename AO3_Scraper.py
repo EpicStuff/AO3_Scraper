@@ -177,7 +177,7 @@ def main(password=''):
 			print('Invalid input: enter a non negative number')
 
 	# Open a CSV file for writing
-	with open(username + '_bookmarks.csv', 'w', newline='', encoding='utf-8') as csvfile:
+	with open(username + '_ao3_bookmarks.csv', 'w', newline='', encoding='utf-8') as csvfile:
 		# Create a CSV writer object
 		csvwriter = csv.writer(csvfile)
 		# Write the header row
@@ -212,7 +212,7 @@ def main(password=''):
 
 				if title:
 					# Extract the data using the provided selectors
-					authors = bookmark.select('a[rel='author']')
+					authors = bookmark.select('a[rel=\'author\']')
 					fandoms = bookmark.select('.fandoms a')
 					warnings = bookmark.select('li.warnings')
 					rating = bookmark.select_one('span.rating')
@@ -228,7 +228,7 @@ def main(password=''):
 					bookmarkers_tags = bookmark.select_one('.meta.tags.commas')
 
 					# Check if the bookmark has authors
-					authors.element = bookmark.select('a[rel='author']')
+					authors.element = bookmark.select('a[rel=\'author\']')
 					if authors.element:
 						authors = [author.text for author in authors]
 						if authors:
@@ -315,8 +315,7 @@ def main(password=''):
 					bookmarkers_tags = ', '.join(bookmarkers_tags.text.strip('\n').split('\n')) if bookmarkers_tags else ''
 
 					# Write the data to the CSV file
-					csvwriter.writerow([url, title, authors, fandoms, warnings, rating, categories,
-                                            characters, relationships, tags, words, date_bookmarked, date_updated, bookmarkers_notes, bookmarkers_tags])
+					csvwriter.writerow([url, title, authors, fandoms, warnings, rating, categories, characters, relationships, tags, words, date_bookmarked, date_updated, bookmarkers_notes, bookmarkers_tags])
 			from requests.exceptions import RequestException
 
 			try:
@@ -331,7 +330,7 @@ def main(password=''):
 
 	# Message at the end of the program
 	print('All done!')
-	print('Your bookmarks have been saved to ' + Fore.BLUE + username + Fore.RESET + '_bookmarks.csv')
+	print('Your bookmarks have been saved to ' + Fore.BLUE + username + Fore.RESET + '_ao3_bookmarks.csv')
 
 
 if __name__ == '__main__':
